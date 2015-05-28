@@ -10,6 +10,13 @@ type Reader struct {
 	bar *ProgressBar
 }
 
+func NewPbReader(rd io.Reader, pb *ProgressBar) *Reader {
+	return &Reader{
+		Reader: rd,
+		bar: pb,
+	}
+}
+
 func (r *Reader) Read(p []byte) (n int, err error) {
 	n, err = r.Reader.Read(p)
 	r.bar.Add(n)

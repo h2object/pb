@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/cheggaaa/pb"
+	"github.com/h2object/pb"
 	"time"
 )
 
@@ -9,6 +9,7 @@ func main() {
 	count := 5000
 	bar := pb.New(count)
 
+	bar.Prefix("Markdown files: ")
 	// show percents (by default already true)
 	bar.ShowPercent = true
 
